@@ -18,5 +18,8 @@ module Middlewares
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # config.middleware.delete ActionDispatch::Session::CookieStore
+    # config.middleware.swap ActionDispatch::Session::CookieStore, ActionDispatch::Reloader
   end
 end
