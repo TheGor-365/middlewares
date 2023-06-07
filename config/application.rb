@@ -1,4 +1,5 @@
 require_relative "boot"
+require_relative "../lib/request_time_logger"
 
 require "rails/all"
 
@@ -21,5 +22,7 @@ module Middlewares
 
     # config.middleware.delete ActionDispatch::Session::CookieStore
     # config.middleware.swap ActionDispatch::Session::CookieStore, ActionDispatch::Reloader
+
+    config.middleware.use RequestTimeLogger, '#'
   end
 end
